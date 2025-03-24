@@ -18,20 +18,23 @@ int main()
         system("cls");
         MenuTask();
         ch = cin.get();
-        
-        cin.get();
+
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Очищення буфера
 
         switch (ch) {
-        case '1': task1();   break;
-        case '2': task1();   break;
-        case '3': task1();   break;
-        case '4': task1();   break;
-		case '5':  Examples(); break;
-		case '6': return 0;
-	    }
-        cout << " Press any key and enter\n";
-        ch = cin.get();
+        case '1': task1(); break;
+        case '2': task2(); break;
+        case '3': task3(); break;
+        case '4': task4(); break;
+        case '5': Examples(); break;
+        case '6': return 0;
+        }
+
+        cout << "Press Enter to continue...";
+        cin.get(); // Очікування перед поверненням у меню
+
     } while (ch != '6');
+
 
     return 0;
 }
